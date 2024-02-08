@@ -6,8 +6,8 @@
 
 package search
 
-func LinearSearch(haystack *[]int, needle int) int {
-	for i, item := range *haystack {
+func LinearSearch(haystack []int, needle int) int {
+	for i, item := range haystack {
 		if item == needle {
 			return i
 		}

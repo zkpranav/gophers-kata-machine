@@ -25,15 +25,15 @@ package search
 
 import "math"
 
-func CrystalBalls(breaks *[]bool) int {
-	distance := int(math.Floor(math.Sqrt(float64(len(*breaks)))))
+func CrystalBalls(breaks []bool) int {
+	distance := int(math.Floor(math.Sqrt(float64(len(breaks)))))
 
 	curr := 0
 	lookAhead := 0
 	for ;; {
 		curr = lookAhead
 		lookAhead += distance
-		if lookAhead >= len(*breaks) || (*breaks)[lookAhead] {
+		if lookAhead >= len(breaks) || breaks[lookAhead] {
 			break
 		}
 	}
@@ -41,7 +41,7 @@ func CrystalBalls(breaks *[]bool) int {
 	
 	i := curr
 	for ; i <= lookAhead; i++ {
-		if (*breaks)[i] {
+		if breaks[i] {
 			return i
 		}
 	}

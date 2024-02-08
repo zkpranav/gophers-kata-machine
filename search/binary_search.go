@@ -17,13 +17,13 @@
 
 package search
 
-func BinarySearch(haystack *[]int, needle int) int {
+func BinarySearch(haystack []int, needle int) int {
 	low := 0
-	high := len(*haystack)
+	high := len(haystack)
 
 	for ; low < high; {
 		mid := low + ((high - low) / 2)
-		item := (*haystack)[mid]
+		item := haystack[mid]
 
 		if item == needle {
 			return mid
