@@ -69,10 +69,12 @@ func (q *Queue[T]) Deque() (value T, err error) {
 	return
 }
 
-func (q *Queue[T]) Peek() (value T) {
+func (q *Queue[T]) Peek() (value T, err error) {
 	if q.head == nil {
+		err = errors.New("cannot peek an empty queue")
 		return
 	}
 
-	return q.head.value
+	value = q.head.value
+	return
 }

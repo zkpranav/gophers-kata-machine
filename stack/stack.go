@@ -56,10 +56,12 @@ func (s *Stack[T]) Pop() (value T, err error) {
 	return
 }
 
-func (s *Stack[T]) Peek() (value T) {
+func (s *Stack[T]) Peek() (value T, err error) {
 	if s.head == nil {
+		err = errors.New("cannot peek an empty stack")
 		return
 	}
 
-	return s.head.value
+	value = s.head.value
+	return
 }
