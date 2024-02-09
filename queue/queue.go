@@ -1,3 +1,13 @@
+/*
+* Queue -
+* A FIFO data structure implemented as a singly linked list.
+*
+* Worst case time complexity -
+* Enqueue: O(1)
+* Deque: O(1)
+* Peek: O(1)
+*/
+
 package queue
 
 import "errors"
