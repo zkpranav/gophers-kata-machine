@@ -33,6 +33,7 @@ func (q *Queue[T]) Enqueue(value T) {
 
 	if (q.tail == nil) {
 		q.tail = &node
+		q.head = q.tail
 		return
 	}
 
@@ -50,6 +51,11 @@ func (q *Queue[T]) Deque() (value T, err error) {
 	q.head = q.head.next
 	node.next = nil
 	value = node.value
+
+	if q.head == nil {
+		q.tail = nil
+	}
+
 	return
 }
 
